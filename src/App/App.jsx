@@ -1,22 +1,21 @@
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Movies } from '../pages/Movies/Movies';
 import { Home } from '../pages/Home/Home';
 import { Header } from '../components/Header';
-import { fetchTrendingMovies } from '../service/ApiServiceFetch';
-import { Routes, Route, Navigate } from 'react-router-dom';
-
-import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 export const App = () => {
-  useEffect(() => {
-    async function fetchData() {
-      const res = await fetchTrendingMovies();
-      console.log('res1 Data :>> ', res);
-    }
-    fetchData();
-  }, []);
-
   return (
     <div>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Movies Style</title>
+        <link
+          rel="canonical"
+          href="https://enjoy3325.github.io/goit-react-hw-05-movies/"
+        />
+        <meta name="description" content="Movies search" />
+      </Helmet>
       <section>
         <Header />
       </section>
