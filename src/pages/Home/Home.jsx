@@ -1,24 +1,38 @@
+import { MovieTrandItem } from '../../components/MovieTrandItem/MovieTrandItem.jsx';
 import { fetchTrendingMovies } from '../../service/ApiServiceFetch';
+
+import { MoviesTrandsList, Section } from './Home.styled';
 import React, { useEffect, useState } from 'react';
 
+// import { useRef } from 'react';
+
 export const Home = () => {
-  const [results, setResults] = useState([]);
+  const [movieTrends, setMoviesTrends] = useState([]);
+
   useEffect(() => {
-    async function fetchData() {
-      const res = await fetchTrendingMovies(results);
-      console.log('TrendingMovies  :>> ', res);
-    }
+    const fetchData = async () => {
+      try {
+        let data = await fetchTrendingMovies();
+        console.log('data.result :>> ', data);
+        data = setMoviesTrends(data.results);
+      } catch (error) {
+      } finally {
+      }
+    };
+
     fetchData();
   }, []);
 
   return (
-    <main>
+    <Section>
       <h1>Welcome to Movies Style</h1>
       <h2>Trending today</h2>
 
-      <ul>
-        <li></li>
-      </ul>
-    </main>
+      <MoviesTrandsList>
+        {movieTrends.map(movieTrend => (
+          <MovieTrandItem key={movieTrend.id} {...movieTrend} />
+        ))}
+      </MoviesTrandsList>
+    </Section>
   );
 };

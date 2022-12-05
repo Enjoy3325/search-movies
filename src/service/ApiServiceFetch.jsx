@@ -14,10 +14,11 @@ export const fetchTrendingMovies = async () => {
 
 //?  пошук фільму за ключовим словом на сторінці фільмів.
 
-export const fetchMoviesSearch = async (query, page = 1, adult = false) => {
+export const fetchMoviesSearch = async search => {
   try {
     const response = await fetch(
-      `${BASE_URL}/search/movie?api_key=${API_KEY}&q=${query}&language=en-US&${page}&${adult}`
+      `
+${BASE_URL}/search/company?api_key=${API_KEY}&page=1&query=${search}`
     );
     return await response.json();
   } catch (error) {}
@@ -25,10 +26,10 @@ export const fetchMoviesSearch = async (query, page = 1, adult = false) => {
 
 // ? запит повної інформації про фільм для сторінки кінофільму.
 
-export const fetchInfoMovies = async () => {
+export const fetchInfoMovies = async id => {
   try {
     const response = await fetch(
-      `${BASE_URL}/movie/{movie_id}?api_key=${API_KEY}&language=en-US`
+      `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en-US`
     );
     return await response.json();
   } catch (error) {}
