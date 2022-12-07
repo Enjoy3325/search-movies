@@ -1,6 +1,7 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const MoviesStyleBtn = styled.button`
+export const MoviesStyleLink = styled(NavLink)`
   display: flex;
   background: none;
   border: 2px solid;
@@ -13,6 +14,9 @@ export const MoviesStyleBtn = styled.button`
   border-radius: 8px;
   border-color: #183666;
   margin-top: 40px;
+  max-width: 150px;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   cursor: pointer;
   :hover,

@@ -12,16 +12,14 @@ import {
 export const Header = () => {
   return (
     <HeaderWraper>
+      <LogoWrapper to="/" end="true">
+        <img src={logo} alt="MOVIE STYLE" width={50} />
+        <HeaderLogoSpan>OVIESTYLE</HeaderLogoSpan>
+      </LogoWrapper>
       <nav>
         <HeaderUl>
-          <li>
-            <LogoWrapper to="/" end>
-              <img src={logo} alt="MOVIE STYLE" width={50} />
-              <HeaderLogoSpan>OVIESTYLE</HeaderLogoSpan>
-            </LogoWrapper>
-          </li>
           <HeaderLinkItem>
-            <StyledLink to="/" end>
+            <StyledLink to="/" end="true">
               Home
             </StyledLink>
           </HeaderLinkItem>

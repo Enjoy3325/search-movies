@@ -18,7 +18,7 @@ export const fetchMoviesSearch = async search => {
   try {
     const response = await fetch(
       `
-${BASE_URL}/search/company?api_key=${API_KEY}&page=1&query=${search}`
+${BASE_URL}/search/movie?api_key=${API_KEY}&page=1&query=${search}`
     );
     return await response.json();
   } catch (error) {}
@@ -37,10 +37,10 @@ export const fetchInfoMovies = async id => {
 
 // ? запит інформації про акторський склад для сторінки кінофільму.
 
-export const fetchMovieCredits = async () => {
+export const fetchMovieCredits = async movieId => {
   try {
     const response = await fetch(`
-${BASE_URL}/movie/{movie_id}/credits?api_key=${API_KEY}&language=en-US`);
+${BASE_URL}/movie/${movieId}/credits?&api_key=${API_KEY}&language=en-US`);
     return await response.json();
   } catch (error) {}
 };
@@ -53,6 +53,6 @@ export const fetchMoviesReviews = async () => {
       `${BASE_URL}/movie/{movie_id}/reviews?api_key=${API_KEY}&language=en-US&page=1`
     );
     return await response.json();
-    console.log('response.json() :>> ', response.json());
+    // console.log('response.json() :>> ', response.json());
   } catch (error) {}
 };

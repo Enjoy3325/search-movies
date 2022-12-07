@@ -1,18 +1,26 @@
 import { Link, useLocation } from 'react-router-dom';
-import { MoviesTrandsItem, TrendMovieTirle } from './MovieTrandItem.styled';
+import {
+  MovieImg,
+  MoviesTrandsItem,
+  AverageDiv,
+} from './MovieTrandItem.styled';
 import React from 'react';
 
-export const MovieTrandItem = ({ id, title, poster_path, vote_average }) => {
+export const MovieTrandItem = ({ movie }) => {
   const location = useLocation();
+
   return (
-    <div>
-      <Link to={`/movies/${id}`} state={{ from: location }}>
-        <h1>{title}</h1>
-        <img alt={title} src={`http://image.tmdb.org/t/p/w500${poster_path}`} />
-        <div>
-          <span>{vote_average.toFixed(2)}</span>
-        </div>
+    <MoviesTrandsItem>
+      <Link to={`/movies/${movie.id}`} state={{ from: location }}>
+        {/* <TrendMovieTitle>{movie.title}</TrendMovieTitle> */}
+        <MovieImg
+          alt={movie.title}
+          src={`http://image.tmdb.org/t/p/w500${movie.poster_path}`}
+        />
+        <AverageDiv>
+          <span>{movie.vote_average}</span>
+        </AverageDiv>
       </Link>
-    </div>
+    </MoviesTrandsItem>
   );
 };

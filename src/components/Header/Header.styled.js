@@ -7,6 +7,8 @@ export const HeaderWraper = styled.div`
   position: fixed;
   top: 0;
   margin-right: auto;
+  align-items: center;
+  justify-content: space-around;
 `;
 
 export const HeaderLogoSpan = styled.span`
@@ -36,6 +38,8 @@ export const StyledLink = styled(NavLink)`
   border-radius: 8px;
   border-color: #183666;
   margin-top: 40px;
+  width: 150px;
+  padding: 22px;
   text-decoration: none;
   cursor: pointer;
   justify-content: center;
