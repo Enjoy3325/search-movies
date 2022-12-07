@@ -26,10 +26,10 @@ ${BASE_URL}/search/movie?api_key=${API_KEY}&page=1&query=${search}`
 
 // ? запит повної інформації про фільм для сторінки кінофільму.
 
-export const fetchInfoMovies = async id => {
+export const fetchInfoMovies = async movieId => {
   try {
     const response = await fetch(
-      `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en-US`
+      `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`
     );
     return await response.json();
   } catch (error) {}
