@@ -1,6 +1,4 @@
-import { fetchMoviesSearch } from '../../service/ApiServiceFetch';
-
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import React from 'react';
 
 export const Searchbar = ({ onSubmit }) => {

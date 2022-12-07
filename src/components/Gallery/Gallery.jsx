@@ -1,14 +1,15 @@
-// import { fetchTrendingMovies } from '../../service/ApiServiceFetch';
-import { MovieTrandItem } from '../MovieTrandItem/MovieTrandItem.jsx';
-import { MoviesTrandsList } from '../../pages/Home/Home.styled';
+import { MoviesGalleryItem } from '../../components/MoviesGalleryItem/MoviesGalleryItem';
+import { MoviesGalleryList } from './Gallery.styled';
+
 // import React, { useEffect, useState } from 'react';
 
-export const Gallery = ({ movies }) => {
+export const MoviesGallery = ({ movies }) => {
   return (
-    <MoviesTrandsList>
+    <MoviesGalleryList>
       {movies.map(movie => {
-        return <MovieTrandItem key={movie.id} movie={movie} />;
+        console.log('movie :>> ', movie);
+        return <MoviesGalleryItem key={movie.id} movie={movie} />;
       })}
-    </MoviesTrandsList>
+    </MoviesGalleryList>
   );
 };

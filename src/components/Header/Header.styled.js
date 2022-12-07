@@ -6,6 +6,7 @@ export const HeaderWraper = styled.div`
   width: 100%;
   position: fixed;
   top: 0;
+
   margin-right: auto;
   align-items: center;
   justify-content: space-around;
@@ -52,8 +53,8 @@ export const StyledLink = styled(NavLink)`
   }
   :hover,
   :focus {
-    box-shadow: 0 0.5em 0.5em -0.4em, #ffa260;
-    transform: translateY(-0.25em);
+    box-shadow: 10px 10px, 0 #ffa260;
+    transform: translateY(-10px);
     border-color: #ffa260;
     color: #fff;
   }
@@ -73,4 +74,10 @@ export const HeaderLinkItem = styled.li`
   align-items: center;
   text-decoration: none;
   color: inherit;
+`;
+export const LoginUl = styled.ul`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 `;

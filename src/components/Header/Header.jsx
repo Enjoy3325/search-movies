@@ -1,4 +1,3 @@
-// import { Outlet } from 'react-router-dom';
 import logo from '../../asetss/logo.png';
 import {
   HeaderWraper,
@@ -7,6 +6,7 @@ import {
   StyledLink,
   LogoWrapper,
   HeaderLinkItem,
+  LoginUl,
 } from './Header.styled';
 
 export const Header = () => {
@@ -29,10 +29,10 @@ export const Header = () => {
         </HeaderUl>
       </nav>
 
-      <ul>
-        <li>Sign In</li>
-        <li>Sign Up</li>
-      </ul>
+      <LoginUl>
+        <StyledLink>Sign In</StyledLink>
+        <StyledLink>Sign Up</StyledLink>
+      </LoginUl>
     </HeaderWraper>
   );
 };

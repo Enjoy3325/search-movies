@@ -1,7 +1,8 @@
 import { fetchTrendingMovies } from '../../service/ApiServiceFetch';
-import { Gallery } from '../../components/Gallery/Gallery';
 import { Section } from './Home.styled';
+import { Title, Subtitle } from '../../components/Gallery/Gallery.styled';
 import React, { useEffect, useState } from 'react';
+import { MoviesGallery } from 'components/Gallery/Gallery';
 
 // import { useRef } from 'react';
 
@@ -23,9 +24,9 @@ export const Home = () => {
   }, []);
   return (
     <Section>
-      <h1>Welcome to Movies Style</h1>
-      <h2>Trending today</h2>
-      <Gallery movies={movies} />
+      <Title>Welcome to Movies Style</Title>
+      <Subtitle>Trending today</Subtitle>
+      <MoviesGallery movies={movies} />
     </Section>
   );
 };

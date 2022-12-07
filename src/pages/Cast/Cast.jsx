@@ -34,7 +34,7 @@ export const Cast = () => {
                       src={
                         profile_path
                           ? `https://image.tmdb.org/t/p/w200${profile_path}`
-                          : `../../asetss/no-photo-icon-22.png`
+                          : `https://via.placeholder.com/395x574`
                       }
                       alt="{name}"
                       width="170"

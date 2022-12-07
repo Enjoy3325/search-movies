@@ -47,12 +47,11 @@ ${BASE_URL}/movie/${movieId}/credits?&api_key=${API_KEY}&language=en-US`);
 
 // ? запит оглядів для сторінки кінофільму.
 
-export const fetchMoviesReviews = async () => {
+export const fetchMoviesReviews = async movieId => {
   try {
     const response = await fetch(
-      `${BASE_URL}/movie/{movie_id}/reviews?api_key=${API_KEY}&language=en-US&page=1`
+      `${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`
     );
     return await response.json();
-    // console.log('response.json() :>> ', response.json());
   } catch (error) {}
 };
