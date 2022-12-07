@@ -22,7 +22,7 @@ export const MovieDetails = () => {
       }
     };
     fetchMovies();
-  }, []);
+  }, [movieId]);
 
   function getGenres() {
     const result = selectedMovie.genres.map(genre => genre.name);
