@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 import {
   MovieImg,
@@ -28,4 +29,8 @@ export const MoviesGalleryItem = ({ movie }) => {
       </Link>
     </GalleryItem>
   );
+};
+
+MoviesGalleryItem.propTypes = {
+  movie: PropTypes.array.isRequired,
 };

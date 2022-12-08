@@ -4,7 +4,6 @@ import { fetchMoviesSearch } from '../../service/ApiServiceFetch';
 import { useSearchParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { Section } from 'pages/Home/Home.styled';
-// import { IoBalloonSharp } from 'react-icons/io';
 
 export const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -34,10 +33,7 @@ export const Movies = () => {
   return (
     <Section>
       <div>
-        <h1>
-          Thousands of films for every taste are waiting for you
-          {/* <IoBalloonSharp /> */}
-        </h1>
+        <h1>Thousands of films for every taste are waiting for you 🎈</h1>
 
         <Searchbar onSubmit={handeleSubmitClick} />
         {!!movies.length && <MoviesGallery movies={movies} />}

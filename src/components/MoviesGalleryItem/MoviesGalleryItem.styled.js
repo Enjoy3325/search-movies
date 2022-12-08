@@ -13,10 +13,13 @@ export const AverageDiv = styled.div`
 
 export const AverageSpan = styled.span`
   position: absolute;
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: 900;
   display: block;
-
-  top: 0;
-  right: 0;
+  color: #ff9000;
+  top: 10px;
+  left: 10px;
   margin: 0;
-  border-radius: 50%;
+  color: #ff9000;
 `;

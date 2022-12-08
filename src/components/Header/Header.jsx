@@ -6,7 +6,7 @@ import {
   StyledLink,
   LogoWrapper,
   HeaderLinkItem,
-  LoginUl,
+  // LoginUl,
 } from './Header.styled';
 
 export const Header = () => {
@@ -29,10 +29,10 @@ export const Header = () => {
         </HeaderUl>
       </nav>
 
-      <LoginUl>
+      {/* <LoginUl>
         <StyledLink>Sign In</StyledLink>
         <StyledLink>Sign Up</StyledLink>
-      </LoginUl>
+      </LoginUl> */}
     </HeaderWraper>
   );
 };

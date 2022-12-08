@@ -6,7 +6,7 @@ export const HeaderWraper = styled.div`
   width: 100%;
   position: fixed;
   top: 0;
-
+  z-index: 4;
   margin-right: auto;
   align-items: center;
   justify-content: space-around;
@@ -50,6 +50,7 @@ export const StyledLink = styled(NavLink)`
   margin-bottom: 40px;
   &.active {
     color: #ff9000;
+    animation: glow 800ms ease-out infinite alternate;
   }
   :hover,
   :focus {

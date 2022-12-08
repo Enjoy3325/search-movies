@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { MoviesGalleryItem } from '../../components/MoviesGalleryItem/MoviesGalleryItem';
 import { MoviesGalleryList } from './Gallery.styled';
 
@@ -12,4 +13,8 @@ export const MoviesGallery = ({ movies }) => {
       })}
     </MoviesGalleryList>
   );
+};
+
+MoviesGallery.propTypes = {
+  movies: PropTypes.array.isRequired,
 };

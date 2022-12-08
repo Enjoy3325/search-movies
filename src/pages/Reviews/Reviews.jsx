@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { fetchMoviesReviews } from '../../service/ApiServiceFetch';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -57,4 +58,11 @@ export const Reviews = () => {
       )}
     </>
   );
+};
+
+Reviews.propTypes = {
+  id: PropTypes.number.isRequired,
+  path: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
 };

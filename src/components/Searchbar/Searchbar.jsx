@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+import { FormSearch, InputSearch, ButtonSearch } from './Searchbar.style';
 import { useState } from 'react';
 import React from 'react';
 
@@ -15,9 +17,8 @@ export const Searchbar = ({ onSubmit }) => {
 
   return (
     <>
-      <form onSubmit={handleSearch}>
-        <button type="search"></button>
-        <input
+      <FormSearch onSubmit={handleSearch}>
+        <InputSearch
           type="text"
           value={inputValue}
           onChange={handleChange}
@@ -25,7 +26,12 @@ export const Searchbar = ({ onSubmit }) => {
           autoFocus
           placeholder={'What do you want to watch?'}
         />
-      </form>
+        <ButtonSearch type="search">Search</ButtonSearch>
+      </FormSearch>
     </>
   );
+};
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };

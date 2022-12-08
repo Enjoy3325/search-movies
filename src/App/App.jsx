@@ -1,12 +1,18 @@
+// import { lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { SharedLayout } from '../components/SharedLayout/SharedLayout';
-import { Reviews } from 'pages/Reviews/Reviews';
+import { Helmet } from 'react-helmet';
+import { Reviews } from '../pages/Reviews/Reviews';
 import { Cast } from '../pages/Cast/Cast';
-import { MovieDetails } from 'pages/MovieDetails/MovieDetails';
+import { MovieDetails } from '../pages/MovieDetails/MovieDetails';
 import { Movies } from '../pages/Movies/Movies';
 import { Home } from '../pages/Home/Home';
-// import { Header } from '../components/Header/Header';
-import { Helmet } from 'react-helmet';
+
+// const Home = lazy(() => import('../pages/Home/Home'));
+// const Movies = lazy(() => import('../pages/Movies/Movies'));
+// const MovieDetails = lazy(() => import('../pages/MovieDetails/MovieDetails'));
+// const Cast = lazy(() => import('../pages/Cast/Cast'));
+// const Reviews = lazy(() => import('../pages/Reviews/Reviews'));
 
 export const App = () => {
   return (

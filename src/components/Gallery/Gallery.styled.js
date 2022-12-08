@@ -7,6 +7,7 @@ export const MoviesGalleryList = styled.ul`
   width: 100%;
   gap: 30px 30px;
   grid-template-columns: repeat(4, 2fr);
+  margin-top: 30px;
 `;
 
 export const GalleryItem = styled.li`
