@@ -18,7 +18,6 @@ function Movies() {
     async function fetchSearchInput() {
       try {
         const res = await fetchMoviesSearch(lastSearch);
-        console.log('res :>> ', res);
         setMovies(res.results);
       } catch (error) {
         console.log('Error', error);

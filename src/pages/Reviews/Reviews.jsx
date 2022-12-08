@@ -15,7 +15,6 @@ function Reviews() {
       try {
         const response = await fetchMoviesReviews(movieId);
         setReviews(response.results);
-        console.log('response Reviews :>> ', response);
       } catch (error) {
         console.log('error :>> ', error);
       } finally {

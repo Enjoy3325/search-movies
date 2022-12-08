@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Loader } from 'components/Loader/Loader';
 
- function Cast() {
+function Cast() {
   const { movieId } = useParams();
   const [actors, setActors] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -13,7 +13,6 @@ import { Loader } from 'components/Loader/Loader';
       setIsLoading(true);
       try {
         const response = await fetchMovieCredits(movieId);
-        console.log('response Credits :>> ', response);
         setActors(response);
       } catch (error) {
         console.log('error :>> ', error);
