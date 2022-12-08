@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import { MoviesGalleryItem } from '../../components/MoviesGalleryItem/MoviesGalleryItem';
 import { MoviesGalleryList } from './Gallery.styled';
 
-// import React, { useEffect, useState } from 'react';
-
 export const MoviesGallery = ({ movies }) => {
   return (
     <MoviesGalleryList>

@@ -2,12 +2,15 @@ import PropTypes from 'prop-types';
 import { fetchMoviesReviews } from '../../service/ApiServiceFetch';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Loader } from 'components/Loader/Loader';
 
-export const Reviews = () => {
+function Reviews() {
   const [reviews, setReviews] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const { movieId } = useParams();
 
   useEffect(() => {
+    setIsLoading(true);
     const fetchMovies = async () => {
       try {
         const response = await fetchMoviesReviews(movieId);
@@ -16,12 +19,14 @@ export const Reviews = () => {
       } catch (error) {
         console.log('error :>> ', error);
       } finally {
+        setIsLoading(false);
       }
     };
     fetchMovies();
   }, [movieId]);
   return (
     <>
+      {isLoading && <Loader />}
       {reviews?.length ? (
         <section>
           <div>
@@ -58,7 +63,7 @@ export const Reviews = () => {
       )}
     </>
   );
-};
+}
 
 Reviews.propTypes = {
   id: PropTypes.number.isRequired,
@@ -66,3 +71,4 @@ Reviews.propTypes = {
   author: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
 };
+export default Reviews;

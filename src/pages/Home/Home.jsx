@@ -4,19 +4,24 @@ import { Title, Subtitle } from '../../components/Gallery/Gallery.styled';
 import React, { useEffect, useState } from 'react';
 import { MoviesGallery } from 'components/Gallery/Gallery';
 
+import { Loader } from 'components/Loader/Loader';
+
 // import { useRef } from 'react';
 
-export const Home = () => {
+function Home() {
   const [movies, setMovies] = useState([]);
+  const [isLoader, setIsLoader] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoader(true);
       try {
         const data = await fetchTrendingMovies();
         console.log('data.result :>> ', data);
         setMovies(data.results);
       } catch (error) {
       } finally {
+        setIsLoader(false);
       }
     };
 
@@ -26,7 +31,9 @@ export const Home = () => {
     <Section>
       <Title>Welcome to Movies Style</Title>
       <Subtitle>Trending today</Subtitle>
+      {isLoader && <Loader />}
       <MoviesGallery movies={movies} />
     </Section>
   );
-};
+}
+export default Home;

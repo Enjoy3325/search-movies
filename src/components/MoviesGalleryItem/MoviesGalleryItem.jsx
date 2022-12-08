@@ -16,7 +16,7 @@ export const MoviesGalleryItem = ({ movie }) => {
       <Link to={`/movies/${movie.id}`} state={{ from: location }}>
         <AverageDiv>
           <MovieImg
-            alt={movie.title}
+            alt={movie.title || 'movie'}
             src={
               movie.poster_path
                 ? `http://image.tmdb.org/t/p/w500${movie.poster_path}`
@@ -32,5 +32,9 @@ export const MoviesGalleryItem = ({ movie }) => {
 };
 
 MoviesGalleryItem.propTypes = {
-  movie: PropTypes.array.isRequired,
+  movie: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string,
+    poster_path: PropTypes.string,
+  }).isRequired,
 };

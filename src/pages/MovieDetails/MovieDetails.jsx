@@ -1,24 +1,30 @@
+import { Suspense } from 'react';
 import { fetchInfoMovies } from '../../service/ApiServiceFetch';
 import { useParams, useLocation, Outlet } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import { StyledLink } from '../../components/Header/Header.styled';
+import { Loader } from 'components/Loader/Loader';
 
-export const MovieDetails = () => {
+function MovieDetails() {
   const [selectedMovie, setSelectedMovie] = useState(null);
   const { movieId } = useParams();
-  console.log('movieId :>> ', movieId);
+  const [isLoading, setIsLoading] = useState(false);
+
   const location = useLocation();
 
   const fromRef = useRef(location?.state?.from);
 
   useEffect(() => {
     const fetchMovies = async () => {
+      setIsLoading(true);
       try {
         const response = await fetchInfoMovies(movieId);
-        console.log('response :>> ', response);
+
         setSelectedMovie(response);
       } catch (error) {
         console.log('error :>> ', error);
+      } finally {
+        setIsLoading(false);
       }
     };
     fetchMovies();
@@ -28,7 +34,7 @@ export const MovieDetails = () => {
     const result = selectedMovie.genres.map(genre => genre.name);
     return result.join(', ');
   }
-  console.log('location :>> ', location);
+
   return (
     selectedMovie && (
       <main>
@@ -40,7 +46,9 @@ export const MovieDetails = () => {
         />
         <StyledLink to={fromRef.current} state={{ from: location }}>
           Go Back
+          {isLoading && <Loader />}
         </StyledLink>
+
         <StyledLink to={'cast'} state={{ from: location }}>
           Casts
         </StyledLink>
@@ -55,8 +63,11 @@ export const MovieDetails = () => {
         <h4>Geners: {getGenres()}</h4>
         <h2>Overview</h2>
         <p>Users Score: {selectedMovie.overview}</p>
-        <Outlet />
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
       </main>
     )
   );
-};
+}
+export default MovieDetails;

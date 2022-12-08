@@ -1,13 +1,16 @@
 import { fetchMovieCredits } from '../../service/ApiServiceFetch';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Loader } from 'components/Loader/Loader';
 
-export const Cast = () => {
+ function Cast() {
   const { movieId } = useParams();
   const [actors, setActors] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchMovies = async () => {
+      setIsLoading(true);
       try {
         const response = await fetchMovieCredits(movieId);
         console.log('response Credits :>> ', response);
@@ -15,6 +18,7 @@ export const Cast = () => {
       } catch (error) {
         console.log('error :>> ', error);
       } finally {
+        setIsLoading(false);
       }
     };
     fetchMovies();
@@ -22,6 +26,7 @@ export const Cast = () => {
 
   return (
     <div>
+      {isLoading && <Loader />}
       {actors && (
         <>
           <h2>Actors</h2>
@@ -51,4 +56,5 @@ export const Cast = () => {
       )}
     </div>
   );
-};
+}
+export default Cast;
