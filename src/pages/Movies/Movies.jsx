@@ -42,7 +42,7 @@ function Movies() {
         {!!movies?.length < 1 && !null && (
           <p>Sorry! Movies not found. Please, try again</p>
         )}
-        {isLoading ? <p>Loading...</p> : <MoviesGallery movies={movies} />}
+        {isLoading ? <Loader /> : <MoviesGallery movies={movies} />}
       </div>
     </Section>
   );
