@@ -40,13 +40,18 @@ function Reviews() {
                     author,
                     content,
                   }) => {
-                    console.log('avatar_path :>> ', avatar_path);
-                    const ImgSrc = avatar_path.match(/^(http|https)/)
-                      ? `${avatar_path.slice(1, -1)}`
-                      : `https://via.placeholder.com/80x100`;
+                    let imgSrc;
+                    if (avatar_path) {
+                      imgSrc = avatar_path.match(/^(\/http|\/https)/)
+                        ? `${avatar_path.slice(1, -1)}`
+                        : `https://www.gravatar.com/avatar/${avatar_path}`;
+                    } else {
+                      imgSrc = `https://via.placeholder.com/82x82`;
+                    }
+
                     return (
                       <li key={id}>
-                        <img src={ImgSrc} alt={author} />
+                        <img src={imgSrc} alt={author} />
                         <h3>Author: {author}</h3>
                         <p>{content}</p>
                       </li>
