@@ -31,20 +31,21 @@ function MovieDetails() {
   }, [movieId]);
 
   function getGenres() {
-    const result = selectedMovie.genres.map(genre => genre.name);
-    return result.join(', ');
+    const result =
+      selectedMovie?.genres && selectedMovie?.genres.map(genre => genre?.name);
+    return result?.join(', ');
   }
 
   return (
     selectedMovie && (
       <main>
-        <h1>{selectedMovie.title || selectedMovie.name}</h1>
+        <h1>{selectedMovie?.title || selectedMovie?.name}</h1>
 
         <img
-          alt={selectedMovie.title || selectedMovie.title}
-          src={`http://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`}
+          alt={selectedMovie?.title || selectedMovie?.title}
+          src={`http://image.tmdb.org/t/p/w500${selectedMovie?.poster_path}`}
         />
-        <StyledLink to={fromRef.current} state={{ from: location }}>
+        <StyledLink to={fromRef?.current} state={{ from: location }}>
           Go Back
           {isLoading && <Loader />}
         </StyledLink>
@@ -57,12 +58,12 @@ function MovieDetails() {
         </StyledLink>
 
         <div>
-          <span>{selectedMovie.vote_average.toFixed(2)}</span>
+          <span>{selectedMovie?.vote_average?.toFixed(2)}</span>
         </div>
-        <h3>Release date: {selectedMovie.release_date}</h3>
+        <h3>Release date: {selectedMovie?.release_date}</h3>
         <h4>Geners: {getGenres()}</h4>
         <h2>Overview</h2>
-        <p>Users Score: {selectedMovie.overview}</p>
+        <p>Users Score: {selectedMovie?.overview}</p>
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
