@@ -14,6 +14,7 @@ function Reviews() {
       try {
         const response = await fetchMoviesReviews(movieId);
         setReviews(response.results);
+        console.log('response :>> ', response);
       } catch (error) {
         console.log('error :>> ', error);
       } finally {
@@ -22,6 +23,7 @@ function Reviews() {
     };
     fetchMovies();
   }, [movieId]);
+  console.log('reviews :>> ', reviews);
   return (
     <>
       {isLoading && <Loader />}
@@ -38,9 +40,10 @@ function Reviews() {
                     author,
                     content,
                   }) => {
-                    const ImgSrc = avatar_path
+                    console.log('avatar_path :>> ', avatar_path);
+                    const ImgSrc = avatar_path.match(/^(http|https)/)
                       ? `${avatar_path.slice(1, -1)}`
-                      : `https://via.placeholder.com/395x574`;
+                      : `https://via.placeholder.com/80x100`;
                     return (
                       <li key={id}>
                         <img src={ImgSrc} alt={author} />
