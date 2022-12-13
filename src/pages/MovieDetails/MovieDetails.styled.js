@@ -27,3 +27,17 @@ export const MoviesStyleLink = styled(NavLink)`
     color: #fff;
   }
 `;
+
+export const WrapperDetails = styled.div`
+  display: flex;
+  gap: 30px;
+`;
+
+export const Overview = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+`;
+export const ButtonWrapper = styled.div`
+  display: flex;
+`;

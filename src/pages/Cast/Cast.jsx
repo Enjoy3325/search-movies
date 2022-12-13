@@ -1,3 +1,9 @@
+import {
+  MoviesGalleryList,
+  GalleryItem,
+  Title,
+  Subtitle,
+} from 'components/Gallery/Gallery.styled';
 import { fetchMovieCredits } from '../../service/ApiServiceFetch';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -28,12 +34,12 @@ function Cast() {
       {isLoading && <Loader />}
       {actors && (
         <>
-          <h2>Actors</h2>
+          <Title>Actors</Title>
           <div>
-            <ul>
+            <MoviesGalleryList>
               {actors.cast.map(({ name, profile_path, character }) => {
                 return (
-                  <li key={name}>
+                  <GalleryItem key={name}>
                     <img
                       src={
                         profile_path
@@ -44,12 +50,12 @@ function Cast() {
                       width="170"
                       style={{ borderRadius: '15px' }}
                     />
-                    <h3>Name: {name}</h3>
+                    <Subtitle>{name}</Subtitle>
                     <p>Character: {character}</p>
-                  </li>
+                  </GalleryItem>
                 );
               })}
-            </ul>
+            </MoviesGalleryList>
           </div>
         </>
       )}
