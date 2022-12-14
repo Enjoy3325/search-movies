@@ -30,6 +30,7 @@ export const MoviesStyleLink = styled(NavLink)`
 
 export const WrapperDetails = styled.div`
   display: flex;
+  margin-top: 150px;
   gap: 30px;
 `;
 
@@ -40,4 +41,5 @@ export const Overview = styled.div`
 `;
 export const ButtonWrapper = styled.div`
   display: flex;
+  margin-top: 120px;
 `;

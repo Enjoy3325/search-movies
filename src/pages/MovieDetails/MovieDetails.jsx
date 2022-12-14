@@ -43,7 +43,7 @@ function MovieDetails() {
         <WrapperDetails>
           <img
             alt={selectedMovie?.title || selectedMovie?.title}
-            src={`http://image.tmdb.org/t/p/w500${selectedMovie?.poster_path}`}
+            src={`http://image.tmdb.org/t/p/w400${selectedMovie?.poster_path}`}
           />
 
           <Overview>

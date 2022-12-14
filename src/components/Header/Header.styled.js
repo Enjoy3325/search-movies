@@ -4,6 +4,7 @@ import { NavLink, Link } from 'react-router-dom';
 export const HeaderWraper = styled.div`
   display: flex;
   width: 100%;
+  background-color: #131313;
   position: fixed;
   top: 0;
   z-index: 4;
@@ -33,14 +34,13 @@ export const StyledLink = styled(NavLink)`
   font-size: 20px;
   line-height: 1;
   margin: 0.5em;
-  padding: 1em 2em;
   transition: 0.25s;
   color: #ff9000;
   border-radius: 8px;
   border-color: #183666;
-  margin-top: 40px;
+  margin-top: 20px;
   width: 150px;
-  padding: 22px;
+  padding: 15px;
   text-decoration: none;
   cursor: pointer;
   justify-content: center;
