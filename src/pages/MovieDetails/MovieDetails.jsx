@@ -62,9 +62,11 @@ function MovieDetails() {
 
               <StyledLink to={'cast'} state={{ from: location }}>
                 Casts
+                {isLoading && <Loader />}
               </StyledLink>
               <StyledLink to={'reviews'} state={{ from: location }}>
                 Reviews
+                {isLoading && <Loader />}
               </StyledLink>
             </ButtonWrapper>
           </Overview>

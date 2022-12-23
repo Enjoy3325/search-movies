@@ -6,5 +6,6 @@ export const Section = styled.section`
   display: block;
   text-align: center;
   padding-top: 450px;
+  padding-bottom: 15px;
   margin: auto;
 `;

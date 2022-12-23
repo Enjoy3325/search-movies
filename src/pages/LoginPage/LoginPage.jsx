@@ -2,28 +2,28 @@ export const LoginPage = () => {
   return (
     <div>
       <form>
+        <b>Login</b>
         <label>
-          <b>Login</b>
           <input
             type="text"
             name="login"
             placeholder="Arhnold234"
             required
-            autocomplete
+            autoComplete
           ></input>
         </label>
+        <b>Email</b>
         <label>
-          <b>Email</b>
           <input
             type="email"
             name="email"
             placeholder="arhnold@gmail.com"
             required
-            autocomplete
+            autoComplete
           ></input>
         </label>
+        <b>Password</b>
         <label for="pin">
-          <b>Password</b>
           <input
             id="pin"
             type="password"
@@ -32,7 +32,7 @@ export const LoginPage = () => {
             maxlength="15"
             placeholder="######"
             required
-            autocomplete="off"
+            autoComplete={false}
           ></input>
         </label>
 
