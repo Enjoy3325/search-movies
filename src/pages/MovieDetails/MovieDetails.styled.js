@@ -19,6 +19,7 @@ export const MoviesStyleLink = styled(NavLink)`
   justify-content: center;
   text-decoration: none;
   cursor: pointer;
+  transition: color, border-color, box-shadow, transform 300ms ease;
   :hover,
   :focus {
     box-shadow: 0 0.5em 0.5em -0.4em, #ffa260;
@@ -30,6 +31,7 @@ export const MoviesStyleLink = styled(NavLink)`
 
 export const WrapperDetails = styled.div`
   display: flex;
+  padding: 0 20px;
   margin-top: 150px;
   gap: 30px;
 `;
@@ -41,5 +43,6 @@ export const Overview = styled.div`
 `;
 export const ButtonWrapper = styled.div`
   display: flex;
-  margin-top: 120px;
+  flex-direction: flex-start;
+  margin-top: 108px;
 `;

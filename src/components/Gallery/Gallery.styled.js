@@ -14,6 +14,7 @@ export const MoviesGalleryList = styled.ul`
 export const GalleryItem = styled.li`
   transition: all 0.2s ease-in-out;
   border-radius: 10px;
+  margin: auto;
   :hover,
   :focus {
     transform: scale(1.1);
@@ -31,8 +32,9 @@ export const Title = styled.h1`
 export const Subtitle = styled.h2`
   display: flex;
   justify-content: center;
-  margin-bottom: 25px;
-  font-size: 18px;
+  margin-bottom: 15px;
+  font-size: 20px;
   line-height: 1.3;
   font-weight: 600;
+  margin-top: 15px;
 `;

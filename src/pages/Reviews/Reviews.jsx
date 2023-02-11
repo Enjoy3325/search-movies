@@ -3,6 +3,13 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Loader } from 'components/Loader/Loader';
 
+import { TextMovies } from 'pages/Cast/Cast.styled';
+import {
+  BoxWrapper,
+  ImgAuthor,
+  ItemReview,
+  TitleAuthor,
+} from './Reviews.styled';
 function Reviews() {
   const [reviews, setReviews] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -30,8 +37,8 @@ function Reviews() {
       {reviews?.length ? (
         <section>
           <div>
-            <h2>Reviews about the film</h2>
-            <div>
+            <TextMovies>Reviews about the film</TextMovies>
+            <BoxWrapper>
               <ul>
                 {reviews.map(
                   ({
@@ -50,16 +57,16 @@ function Reviews() {
                     }
 
                     return (
-                      <li key={id}>
-                        <img src={imgSrc} alt={author} />
-                        <h3>Author: {author}</h3>
+                      <ItemReview key={id}>
+                        <ImgAuthor src={imgSrc} alt={author} />
+                        <TitleAuthor>Author: {author}</TitleAuthor>
                         <p>{content}</p>
-                      </li>
+                      </ItemReview>
                     );
                   }
                 )}
               </ul>
-            </div>
+            </BoxWrapper>
           </div>
         </section>
       ) : (

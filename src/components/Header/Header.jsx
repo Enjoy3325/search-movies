@@ -1,4 +1,3 @@
-import { LoginPage } from 'pages/LoginPage/LoginPage';
 import logo from '../../asetss/logo.png';
 import {
   HeaderWraper,
@@ -7,7 +6,6 @@ import {
   StyledLink,
   LogoWrapper,
   HeaderLinkItem,
-  // LoginUl,
 } from './Header.styled';
 
 export const Header = () => {
@@ -29,11 +27,6 @@ export const Header = () => {
           </HeaderLinkItem>
         </HeaderUl>
       </nav>
-      <LoginPage />
-      {/* <LoginUl>
-        <StyledLink>Sign In</StyledLink>
-        <StyledLink>Sign Up</StyledLink>
-      </LoginUl> */}
     </HeaderWraper>
   );
 };
