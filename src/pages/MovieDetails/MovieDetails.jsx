@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { fetchInfoMovies } from '../../service/ApiServiceFetch';
 import { useParams, useLocation, Outlet } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
-import YouTube from 'react-youtube';
+// import YouTube from 'react-youtube';
 import { WrapperDetails, Overview, ButtonWrapper } from './MovieDetails.styled';
 import { StyledLink } from '../../components/Header/Header.styled';
 import { Loader } from 'components/Loader/Loader';
